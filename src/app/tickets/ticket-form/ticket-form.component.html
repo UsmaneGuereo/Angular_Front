@@ -1,17 +1,38 @@
+<!-- <button type="submit" id="updateListButton" class="btn-custom" (click)="updateArchivedList()">Afficher tickets archives</button> -->
 <h3>Create a new ticket</h3>
-<form class="ticket-form" [formGroup]="ticketForm">
+<form class="ticket-form" [formGroup]='ticketForm'>
   <label for="title">
     Title <br>
-    <input class="input-custom" type="text" id="title" [formControlName]="'title'">
+    <input class="input-custom" type="text" id="title" formControlName='title'>
   </label>
   <br>
   <label for="description">
     Description <br>
-    <input class="input-custom" type="text" id="description" [formControlName]="'description'">
+    <input class="input-custom" type="text" id="description" formControlName="description">
+  </label>
+    <br>
+  <label for="major">
+    Major <br>
+    <!-- <input class="input-custom" type="text" id="major" [formControlName]="'major'"> -->
+    <select class="input-custom" name="major-list" id="major" formControlName="major">
+      <option *ngFor="let maj of MAJORLIST" [value]='maj'>
+        {{maj}}
+      </option>
+    </select>
+  </label>
+  <br>
+  <label for="student">
+    Student <br>
+    <select class="input-custom" name="student-list" id="student" formControlName="student">
+      <option *ngFor="let stu of this.studentList" [value]='stu.id' (change)="onSelectionChange()">
+        {{stu.id}} - {{stu.prenom}} {{stu.nom}}
+      </option>
+    </select>
   </label>
   <br>
   <button type="submit" class="btn-custom" (click)="addTicket()">Create</button>
 </form>
+<br>
+<!-- Uncomment below to see your form structure and how it changes -->
+<!-- <br><br>{{ticketForm.getRawValue() | json}} -->
 
-<!-- Uncomment below to see your form structure and how it changes-->
-<!--<br><br>{{ticketForm.getRawValue() | json}}-->

@@ -1,0 +1,18 @@
+<!-- <p>
+  student-form works!
+</p> -->
+
+<div class="main">
+  <div class="form-container">
+    <h4>Creer un utilisateur</h4>
+    <form [formGroup]='userForm'>
+      <label for="prenom">Prénom:</label>
+      <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" formControlName="prenom">
+  
+      <label for="nom">Nom:</label>
+      <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" formControlName="nom">
+  
+      <button type="submit" (click)="addUser()">Enregistrer</button>
+    </form>
+  </div>
+</div>

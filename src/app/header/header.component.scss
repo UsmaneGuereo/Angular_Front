@@ -11,3 +11,11 @@
   background: $linearGradient;
   padding: 1em;
 }
+
+.container {
+  text-align: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

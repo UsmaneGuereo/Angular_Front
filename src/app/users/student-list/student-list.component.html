@@ -1,0 +1,26 @@
+<div class="main">
+  <div class="table-container">
+    <h4>Liste utilisateurs</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of studentList">
+          <td>{{ student.id }}</td>
+          <td>{{ student.prenom }}</td>
+          <td>{{ student.nom }}</td>
+          <td>
+            <button (click)="suppUser(student.id)">supprimer</button>
+          </td>
+        </tr>
+        <!-- Ajoutez d'autres lignes de données ici -->
+      </tbody>
+    </table>
+  </div>
+</div>
